@@ -7,223 +7,284 @@
 <title>Devin Al-Fakhry Afrillano | Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg-1:#eef5fb;
-    --bg-2:#e4f4ef;
-    --card:#ffffff;
-    --text:#17314d;
-    --muted:#5c7186;
-    --line:#dfe9f2;
-    --blue:#8b5cf6;
-    --teal:#17a79a;
-    --orange:#ff944d;
-    --shadow: 0 24px 60px -20px rgba(23,49,77,.28);
-    --radius: 28px;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    min-height:100vh;
-    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-    color:var(--text);
-    background:
-      radial-gradient(60% 50% at 14% 8%, rgba(47,109,246,.14), transparent 60%),
-      radial-gradient(55% 45% at 90% 12%, rgba(23,167,154,.16), transparent 60%),
-      linear-gradient(180deg, var(--bg-1), var(--bg-2));
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:48px 20px;
-  }
-  .card{
-    width:100%;
-    max-width:420px;
-    background:var(--card);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:40px 32px 32px;
-    position:relative;
-    overflow:hidden;
-  }
-  .card::before{
-    content:"";
-    position:absolute;
-    top:-60px; left:-60px;
-    width:160px; height:160px;
-    border-radius:50%;
-    background:linear-gradient(135deg, var(--blue), var(--teal));
-    opacity:.10;
-  }
-  .photo-wrap{
-    width:132px;
-    height:132px;
-    margin:0 auto 20px;
-    border-radius:50%;
-    padding:5px;
-    background:linear-gradient(135deg, var(--blue), var(--teal));
-    position:relative;
-  }
-  .photo-wrap img{
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    object-fit:cover;
-    display:block;
-    border:3px solid var(--card);
-  }
-  .status-dot{
-    position:absolute;
-    bottom:6px; right:6px;
-    width:18px; height:18px;
-    border-radius:50%;
-    background:var(--teal);
-    border:3px solid var(--card);
-  }
-  h1{
-    font-family:"Fraunces", serif;
-    font-size:26px;
-    font-weight:600;
-    text-align:center;
-    margin:0 0 4px;
-    letter-spacing:-.01em;
-  }
-  .role{
-    text-align:center;
-    color:var(--blue);
-    font-weight:600;
-    font-size:14.5px;
-    margin:0 0 22px;
-  }
-  .info-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-    padding:18px 18px;
-    background:linear-gradient(180deg, #f7fafd, #ffffff);
-    border:1px solid var(--line);
-    border-radius:18px;
-    margin-bottom:20px;
-  }
-  .info-row{
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-    font-size:13.5px;
-    line-height:1.45;
-  }
-  .info-row svg{flex:none; margin-top:2px; color:var(--teal);}
-  .info-row span{color:var(--text);}
-  .info-row .label{
-    display:block;
-    color:var(--muted);
-    font-size:11.5px;
-    margin-bottom:1px;
-  }
-  .chips{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    justify-content:center;
-    margin-bottom:26px;
-  }
-  .chip{
-    font-size:12.5px;
-    font-weight:600;
-    padding:7px 14px;
-    border-radius:999px;
-    background:#eef7f6;
-    color:var(--teal);
-    border:1px solid #cdeae6;
-  }
-  .chip.alt{
-    background:#eaf1ff;
-    color:var(--blue);
-    border-color:#d3e2ff;
-  }
-  .actions{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:14px 18px;
-    border-radius:14px;
-    font-weight:700;
-    font-size:14.5px;
-    text-decoration:none;
-    transition:transform .15s ease, box-shadow .15s ease;
-  }
-  .btn:hover{transform:translateY(-2px);}
-  .btn-primary{
-    background:linear-gradient(120deg, var(--blue), var(--teal));
-    color:#fff;
-    box-shadow:0 14px 26px -10px rgba(47,109,246,.55);
-  }
-  .btn-secondary{
-    background:#fff;
-    color:var(--text);
-    border:1.5px solid var(--line);
-  }
-  .btn svg{flex:none;}
-  @media (prefers-reduced-motion: reduce){
-    .btn{transition:none;}
-  }
+:root{
+  --ink:#1c1424; --ink-2:#2a1a33;
+  --paper:#fdf8f3; --paper-2:#f7ece0;
+  --tx-d:#2a2035; --tx-l:#fbf5ff;
+  --mut-d:#6f6379; --mut-l:#cbb9d6;
+  --violet:#8b5cf6; --violet-2:#c084fc;
+  --amber:#ffb648; --teal:#1fb5a6;
+  --line-d:rgba(255,255,255,.12); --line-l:#ece0f0;
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--tx-d);background:var(--paper)}
+img{max-width:100%;display:block}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Fraunces",serif;margin:0;letter-spacing:-.02em}
+a{text-decoration:none}
+
+/* NAV */
+.site-header{position:fixed;top:14px;left:0;right:0;z-index:1000;display:flex;justify-content:center}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:60px;padding:0 10px 0 20px;
+  background:rgba(28,20,36,.92);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.08);border-radius:999px;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);width:min(1120px,calc(100% - 32px))}
+.brand{display:flex;align-items:center;gap:9px;color:#fff;font-weight:800;font-size:.92rem}
+.brand-mark{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:.78rem;color:#1c1424;background:linear-gradient(135deg,var(--amber),var(--violet-2))}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{color:#efe6f5;font-weight:700;font-size:.82rem;padding:9px 12px;border-radius:12px;transition:.2s}
+.nav-links a:hover{background:rgba(255,255,255,.08)}
+.nav-store{background:linear-gradient(120deg,var(--teal),var(--amber));color:#1c1424!important;padding:9px 16px!important;margin-left:6px}
+.menu-btn{display:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;width:38px;height:38px;border-radius:11px}
+
+/* SECTION helpers */
+.sec{padding:100px 0 84px}
+.sec.dark{background:linear-gradient(160deg,var(--ink) 0%,var(--ink-2) 100%);color:var(--tx-l)}
+.sec.light{background:var(--paper)}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:800;letter-spacing:.14em;padding:7px 14px;border-radius:999px;margin-bottom:16px}
+.dark .kicker{background:rgba(255,255,255,.08);color:var(--amber);border:1px solid rgba(255,255,255,.14)}
+.light .kicker{background:#f4e9ff;color:#7c3aed;border:1px solid #e7d6fb}
+.sec h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.14;margin-bottom:14px}
+.sec h2 em{font-style:normal;background:linear-gradient(120deg,var(--violet-2),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.dark p{color:var(--mut-l)}
+.light p{color:var(--mut-d)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:170px 0 90px;background:radial-gradient(circle at 18% 20%,rgba(139,92,246,.35),transparent 45%),radial-gradient(circle at 85% 80%,rgba(255,182,72,.18),transparent 45%),linear-gradient(165deg,var(--ink) 0%,var(--ink-2) 100%);color:var(--tx-l)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--amber);font-size:.8rem;font-weight:800;letter-spacing:.16em;margin-bottom:16px}
+.eyebrow span{width:30px;height:3px;border-radius:99px;background:var(--violet-2)}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;margin-bottom:16px}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--violet-2),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-subtitle{font-size:1rem;line-height:1.7;color:var(--mut-l);max-width:480px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:14px;font-weight:800;font-size:.9rem;transition:.2s}
+.btn.primary{background:linear-gradient(120deg,var(--violet),var(--violet-2));color:#fff;box-shadow:0 14px 30px rgba(139,92,246,.35)}
+.btn.ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.btn:hover{transform:translateY(-2px)}
+.quick-facts{display:flex;gap:28px;flex-wrap:wrap}
+.quick-facts strong{display:block;font-size:1.05rem;color:#fff}
+.quick-facts span{font-size:.76rem;color:var(--mut-l)}
+
+.hero-visual{display:flex;justify-content:center}
+.orbit{position:relative;width:min(100%,340px);padding:20px}
+.photo-ring{position:relative;width:280px;height:280px;margin:0 auto;border-radius:50%;padding:6px;background:linear-gradient(135deg,var(--violet),var(--amber),var(--teal))}
+.photo-ring::before{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--ink)}
+.photo-ring img{position:relative;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:5px solid var(--ink)}
+.dot{position:absolute;border-radius:50%}
+.dot-a{width:16px;height:16px;background:var(--amber);right:10px;top:40px}
+.dot-b{width:14px;height:14px;background:var(--teal);left:20px;bottom:70px}
+.badge{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:16px;background:rgba(28,20,36,.9);border:1px solid rgba(255,255,255,.16);box-shadow:0 16px 34px rgba(0,0,0,.3);backdrop-filter:blur(10px);color:#fff;font-size:.72rem}
+.badge img{width:26px;height:26px;border-radius:8px}
+.badge strong{display:block;font-size:.78rem}
+.badge-school{left:-10px;top:90px}
+.badge-status{right:-10px;bottom:20px}
+.badge .dot-status{width:8px;height:8px;border-radius:50%;background:var(--teal);display:inline-block;margin-right:6px}
+
+/* TENTANG */
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.about-wrap p{font-size:.98rem;line-height:1.8}
+.info-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.info-chip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line-l);border-radius:14px;padding:10px 14px;font-size:.82rem;box-shadow:0 8px 20px rgba(60,30,80,.05)}
+.info-chip .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:#fff;font-size:.8rem;flex:none}
+.info-chip b{display:block;font-size:.85rem;color:var(--tx-d)}
+.info-chip span{display:block;font-size:.66rem;color:var(--mut-d)}
+.edu-list{display:flex;flex-direction:column;gap:10px}
+.edu-row{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--line-l);border-radius:14px;padding:14px 16px;box-shadow:0 8px 20px rgba(60,30,80,.05)}
+.edu-row b{font-size:.92rem}
+.edu-row span{font-size:.72rem;color:var(--mut-d);display:block;margin-top:2px}
+.edu-row time{font-size:.72rem;font-weight:800;color:#7c3aed;background:#f4e9ff;padding:5px 10px;border-radius:999px}
+
+/* KEAHLIAN */
+.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.skill-group{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:20px}
+.skill-group h3{color:#fff;font-size:1rem;margin-bottom:12px;font-family:Inter,sans-serif;font-weight:800}
+.tag-row{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-size:.72rem;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.08);color:#efe6f5;border:1px solid rgba(255,255,255,.12)}
+.lang-row{margin-top:18px;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.lang-row .tag-label{color:var(--mut-l);font-size:.76rem;margin-right:4px}
+
+/* PROYEK */
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.proj-card{background:#fff;border:1px solid var(--line-l);border-radius:20px;padding:24px;box-shadow:0 14px 30px rgba(60,30,80,.06);position:relative;overflow:hidden}
+.proj-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:4px;background:var(--accent,linear-gradient(90deg,var(--violet),var(--amber)))}
+.proj-card:nth-child(1){--accent:linear-gradient(90deg,#8b5cf6,#c084fc)}
+.proj-card:nth-child(2){--accent:linear-gradient(90deg,#ffb648,#ff944d)}
+.proj-card:nth-child(3){--accent:linear-gradient(90deg,#1fb5a6,#5eead4)}
+.proj-card:nth-child(4){--accent:linear-gradient(90deg,#8b5cf6,#1fb5a6)}
+.proj-meta{font-size:.7rem;font-weight:800;color:#7c3aed;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.proj-card h3{font-size:1.12rem;margin-bottom:8px;font-family:Inter,sans-serif;font-weight:800;letter-spacing:-.01em}
+.proj-card p{font-size:.86rem;line-height:1.6;color:var(--mut-d);margin-bottom:14px}
+.proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.proj-tags span{font-size:.68rem;font-weight:700;padding:5px 10px;border-radius:999px;background:#f6f0fb;color:#6d28d9}
+.proj-link{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:800;color:#7c3aed}
+
+/* KONTAK + FOOTER */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.contact-box{display:flex;flex-direction:column;gap:2px}
+.contact-box a{display:flex;justify-content:space-between;align-items:center;padding:16px 6px;border-bottom:1px solid rgba(255,255,255,.12);color:#fff}
+.contact-box a:last-child{border-bottom:0}
+.contact-box small{display:block;color:var(--mut-l);font-size:.7rem;margin-bottom:3px}
+.contact-box strong{font-size:.94rem}
+.contact-box span{color:var(--amber)}
+.footer-line{margin-top:60px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.76rem;color:var(--mut-l)}
+.footer-school{display:flex;align-items:center;gap:10px}
+.footer-school img{width:30px;height:30px;border-radius:50%}
+
+@media(max-width:860px){
+  .hero-grid,.about-wrap,.contact-wrap{grid-template-columns:1fr}
+  .hero{padding-top:140px}
+  .skill-groups{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;inset:70px 16px auto 16px;background:rgba(28,20,36,.98);border-radius:18px;padding:10px;flex-direction:column;align-items:stretch;display:none;border:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .badge{position:static;margin-top:14px}
+  .orbit{padding-bottom:0}
+}
 </style>
 </head>
 <body>
-
-  <div class="card">
-    <div class="photo-wrap">
-      <img src="assets/img/devin-profile-circle.jpg" alt="Foto Devin Al-Fakhry Afrillano">
-      <span class="status-dot" title="Sedang belajar & terbuka untuk proyek"></span>
-    </div>
-
-    <h1>Devin Al-Fakhry Afrillano</h1>
-    <p class="role">Junior Web Developer</p>
-
-    <div class="info-list">
-      <div class="info-row">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 12h-6.5l-2 3h-3l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></svg>
-        <span><span class="label">Sekolah</span>SMK Negeri 1 Jenangan &middot; Rekayasa Perangkat Lunak</span>
-      </div>
-      <div class="info-row">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span><span class="label">Lokasi</span>Ponorogo, Jawa Timur, Indonesia</span>
-      </div>
-      <div class="info-row">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-        <span><span class="label">Email</span>devinq1s2@gmail.com</span>
-      </div>
-      <div class="info-row">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        <span><span class="label">Status</span>Siswa Kelas 3 &middot; Calon Tenaga Profesional</span>
-      </div>
-    </div>
-
-    <div class="chips">
-      <span class="chip">HTML</span>
-      <span class="chip">CSS</span>
-      <span class="chip">JavaScript</span>
-      <span class="chip alt">PHP</span>
-      <span class="chip alt">MySQL</span>
-    </div>
-
-    <div class="actions">
-      <a class="btn btn-primary" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php" target="_blank" rel="noopener">
-        Buka Rumah Rajut
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
-      </a>
-      <a class="btn btn-secondary" href="profil-lengkap.html">
-        Lihat Portofolio Lengkap
-      </a>
-    </div>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="#top" class="brand"><span class="brand-mark">DA</span> Devin.</a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <nav class="nav-links">
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontak">Kontak</a>
+      <a class="nav-store" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php">Rumah Rajut ↗</a>
+    </nav>
   </div>
+</header>
 
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><span></span>PROFIL & PORTOFOLIO SISWA RPL</div>
+        <h1>Halo, saya<br><em>Devin Al-Fakhry Afrillano.</em></h1>
+        <p class="hero-subtitle">Siswa Rekayasa Perangkat Lunak di SMK Negeri 1 Jenangan yang tertarik pada pemrograman, pengembangan web, dan game development.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php">Buka Rumah Rajut</a>
+        </div>
+        <div class="quick-facts">
+          <div><strong>RPL</strong><span>Jurusan</span></div>
+          <div><strong>Construct 3</strong><span>Game Dev</span></div>
+          <div><strong>2024–Skrg</strong><span>SMKN 1 Jenangan</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit">
+          <span class="dot dot-a"></span><span class="dot dot-b"></span>
+          <div class="photo-ring"><img src="assets/img/devin-profile-circle.jpg" alt="Foto Devin Al-Fakhry Afrillano"></div>
+          <div class="badge badge-school"><img src="assets/img/logo-smkn1jenangan.png" alt="Logo SMKN 1 Jenangan"><div><strong>SMKN 1 Jenangan</strong><span style="color:var(--mut-l)">Rekayasa Perangkat Lunak</span></div></div>
+          <div class="badge badge-status"><div><strong><span class="dot-status"></span>Calon Tenaga Profesional</strong><span style="color:var(--mut-l)">Belajar • Berkarya • Berkembang</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec light" id="tentang">
+    <div class="container">
+      <div class="kicker">01 / TENTANG & PENDIDIKAN</div>
+      <h2>Belajar teknologi untuk <em>menciptakan sesuatu yang berguna.</em></h2>
+      <div class="about-wrap" style="margin-top:26px">
+        <div>
+          <p>Saya siswa SMK Negeri 1 Jenangan jurusan Rekayasa Perangkat Lunak dengan ketertarikan pada pengembangan perangkat lunak, pemrograman, dan teknologi informasi. Saya berkomitmen terus belajar dan siap berkontribusi secara positif di lingkungan kerja profesional.</p>
+          <div class="info-row">
+            <div class="info-chip"><span class="ic" style="background:linear-gradient(135deg,#8b5cf6,#c084fc)">◉</span><div><b>Ponorogo, 8 April 2009</b><span>Tempat, tanggal lahir</span></div></div>
+            <div class="info-chip"><span class="ic" style="background:linear-gradient(135deg,#ffb648,#ff944d)">☎</span><div><b>0895 7100 40022</b><span>Telepon</span></div></div>
+            <div class="info-chip"><span class="ic" style="background:linear-gradient(135deg,#1fb5a6,#5eead4)">✉</span><div><b>devinq1s2@gmail.com</b><span>Email</span></div></div>
+          </div>
+        </div>
+        <div class="edu-list">
+          <div class="edu-row"><div><b>SMK Negeri 1 Jenangan</b><span>Rekayasa Perangkat Lunak</span></div><time>2024–Skrg</time></div>
+          <div class="edu-row"><div><b>SMPN 1 Mlarak</b><span>Ponorogo, Jawa Timur</span></div><time>2021–2024</time></div>
+          <div class="edu-row"><div><b>SDN 1 Gandu</b><span>Ponorogo, Jawa Timur</span></div><time>2015–2021</time></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="keahlian">
+    <div class="container">
+      <div class="kicker">02 / KEAHLIAN</div>
+      <h2>Keahlian teknis & <em>kemampuan pendukung.</em></h2>
+      <div class="skill-groups">
+        <div class="skill-group"><h3>Pemrograman & Web</h3><div class="tag-row">
+          <span class="tag">C++</span><span class="tag">Java</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">MySQL</span>
+        </div></div>
+        <div class="skill-group"><h3>Aplikasi & Tools</h3><div class="tag-row">
+          <span class="tag">Construct 3</span><span class="tag">Desktop & Mobile</span><span class="tag">MS Office</span><span class="tag">Canva</span><span class="tag">Edit Video Dasar</span>
+        </div></div>
+        <div class="skill-group"><h3>Analisis & Soft Skills</h3><div class="tag-row">
+          <span class="tag">Analisis Sistem</span><span class="tag">Kerja Sama Tim</span><span class="tag">Disiplin</span><span class="tag">Problem Solving</span>
+        </div></div>
+      </div>
+      <div class="lang-row"><span class="tag-label">Bahasa:</span><span class="tag">Indonesia — Aktif</span><span class="tag">Jawa — Aktif</span><span class="tag">Inggris — Dasar</span></div>
+    </div>
+  </section>
+
+  <section class="sec light" id="proyek">
+    <div class="container">
+      <div class="kicker">03 / PROYEK</div>
+      <h2>Pengalaman, PKL, <em>dan proyek yang saya kerjakan.</em></h2>
+      <div class="proj-grid" style="margin-top:26px">
+        <article class="proj-card">
+          <div class="proj-meta">PKL · 2025–Sekarang</div>
+          <h3>Game Block Blast (Construct 3)</h3>
+          <p>Game puzzle berbasis grid: sistem drag & drop, skor, best score, dan efek bom, dibuat selama PKL di CV Blitaris Tekno.</p>
+          <div class="proj-tags"><span>Construct 3</span><span>Grid System</span><span>Drag & Drop</span></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-meta">Proyek Sekolah · 2025</div>
+          <h3>Aplikasi Digital & Website Produk</h3>
+          <p>Latihan membangun antarmuka aplikasi dan website produk yang rapi dan mudah digunakan.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>UI</span></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-meta">Proyek Sekolah · 2024</div>
+          <h3>Sistem Informasi Presensi Siswa</h3>
+          <p>Rancangan sistem presensi dari kebutuhan pengguna hingga penyimpanan data ke basis data.</p>
+          <div class="proj-tags"><span>MySQL</span><span>Basis Data</span></div>
+        </article>
+        <article class="proj-card">
+          <div class="proj-meta">Mini Project Serkom · 2026</div>
+          <h3>Rumah Rajut — Website Usaha</h3>
+          <p>Website dinamis toko rajut: katalog produk dari database, keranjang, checkout, dan admin CRUD.</p>
+          <div class="proj-tags"><span>PHP</span><span>MySQL</span><span>CRUD</span></div>
+          <a class="proj-link" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php" target="_blank">Kunjungi Proyek →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" id="kontak">
+    <div class="container">
+      <div class="contact-wrap">
+        <div>
+          <div class="kicker">04 / KONTAK</div>
+          <h2>Terus belajar, <em>berinovasi, dan berkontribusi.</em></h2>
+        </div>
+        <div class="contact-box">
+          <a href="mailto:devinq1s2@gmail.com"><div><small>Email</small><strong>devinq1s2@gmail.com</strong></div><span>↗</span></a>
+          <a href="tel:0895710040022"><div><small>Telepon</small><strong>0895 7100 40022</strong></div><span>↗</span></a>
+          <a href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php"><div><small>Mini Project Serkom</small><strong>Rumah Rajut</strong></div><span>↗</span></a>
+        </div>
+      </div>
+      <div class="footer-line">
+        <div class="footer-school"><img src="assets/img/logo-smkn1jenangan.png" alt="Logo sekolah"><span>SMK Negeri 1 Jenangan · Rekayasa Perangkat Lunak</span></div>
+        <p>© <span id="year"></span> Devin Al-Fakhry Afrillano</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
