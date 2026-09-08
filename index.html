@@ -1,377 +1,229 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portofolio Devin Al-Fakhry Afrillano - Junior Web Developer dan siswa Rekayasa Perangkat Lunak SMK Negeri 1 Jenangan.">
-  <title>Devin Al-Fakhry Afrillano | Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Devin Al-Fakhry Afrillano - Junior Web Developer dan siswa Rekayasa Perangkat Lunak SMK Negeri 1 Jenangan.">
+<title>Devin Al-Fakhry Afrillano | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-1:#eef5fb;
+    --bg-2:#e4f4ef;
+    --card:#ffffff;
+    --text:#17314d;
+    --muted:#5c7186;
+    --line:#dfe9f2;
+    --blue:#8b5cf6;
+    --teal:#17a79a;
+    --orange:#ff944d;
+    --shadow: 0 24px 60px -20px rgba(23,49,77,.28);
+    --radius: 28px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(60% 50% at 14% 8%, rgba(47,109,246,.14), transparent 60%),
+      radial-gradient(55% 45% at 90% 12%, rgba(23,167,154,.16), transparent 60%),
+      linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
+  }
+  .card{
+    width:100%;
+    max-width:420px;
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:40px 32px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    top:-60px; left:-60px;
+    width:160px; height:160px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--blue), var(--teal));
+    opacity:.10;
+  }
+  .photo-wrap{
+    width:132px;
+    height:132px;
+    margin:0 auto 20px;
+    border-radius:50%;
+    padding:5px;
+    background:linear-gradient(135deg, var(--blue), var(--teal));
+    position:relative;
+  }
+  .photo-wrap img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    border:3px solid var(--card);
+  }
+  .status-dot{
+    position:absolute;
+    bottom:6px; right:6px;
+    width:18px; height:18px;
+    border-radius:50%;
+    background:var(--teal);
+    border:3px solid var(--card);
+  }
+  h1{
+    font-family:"Fraunces", serif;
+    font-size:26px;
+    font-weight:600;
+    text-align:center;
+    margin:0 0 4px;
+    letter-spacing:-.01em;
+  }
+  .role{
+    text-align:center;
+    color:var(--blue);
+    font-weight:600;
+    font-size:14.5px;
+    margin:0 0 22px;
+  }
+  .info-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    padding:18px 18px;
+    background:linear-gradient(180deg, #f7fafd, #ffffff);
+    border:1px solid var(--line);
+    border-radius:18px;
+    margin-bottom:20px;
+  }
+  .info-row{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-size:13.5px;
+    line-height:1.45;
+  }
+  .info-row svg{flex:none; margin-top:2px; color:var(--teal);}
+  .info-row span{color:var(--text);}
+  .info-row .label{
+    display:block;
+    color:var(--muted);
+    font-size:11.5px;
+    margin-bottom:1px;
+  }
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    margin-bottom:26px;
+  }
+  .chip{
+    font-size:12.5px;
+    font-weight:600;
+    padding:7px 14px;
+    border-radius:999px;
+    background:#eef7f6;
+    color:var(--teal);
+    border:1px solid #cdeae6;
+  }
+  .chip.alt{
+    background:#eaf1ff;
+    color:var(--blue);
+    border-color:#d3e2ff;
+  }
+  .actions{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 18px;
+    border-radius:14px;
+    font-weight:700;
+    font-size:14.5px;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:linear-gradient(120deg, var(--blue), var(--teal));
+    color:#fff;
+    box-shadow:0 14px 26px -10px rgba(47,109,246,.55);
+  }
+  .btn-secondary{
+    background:#fff;
+    color:var(--text);
+    border:1.5px solid var(--line);
+  }
+  .btn svg{flex:none;}
+  @media (prefers-reduced-motion: reduce){
+    .btn{transition:none;}
+  }
+</style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a href="#top" class="brand">
-        <span class="brand-mark">DA</span>
-        <span>Devin.</span>
+
+  <div class="card">
+    <div class="photo-wrap">
+      <img src="assets/img/devin-profile-circle.jpg" alt="Foto Devin Al-Fakhry Afrillano">
+      <span class="status-dot" title="Sedang belajar & terbuka untuk proyek"></span>
+    </div>
+
+    <h1>Devin Al-Fakhry Afrillano</h1>
+    <p class="role">Junior Web Developer</p>
+
+    <div class="info-list">
+      <div class="info-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 12h-6.5l-2 3h-3l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"/></svg>
+        <span><span class="label">Sekolah</span>SMK Negeri 1 Jenangan &middot; Rekayasa Perangkat Lunak</span>
+      </div>
+      <div class="info-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span><span class="label">Lokasi</span>Ponorogo, Jawa Timur, Indonesia</span>
+      </div>
+      <div class="info-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        <span><span class="label">Email</span>devinq1s2@gmail.com</span>
+      </div>
+      <div class="info-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span><span class="label">Status</span>Siswa Kelas 3 &middot; Calon Tenaga Profesional</span>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip alt">PHP</span>
+      <span class="chip alt">MySQL</span>
+    </div>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php" target="_blank" rel="noopener">
+        Buka Rumah Rajut
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
       </a>
-      <button class="menu-btn" aria-label="Buka menu">☰</button>
-      <nav class="nav-links">
-        <a href="#tentang">Tentang</a>
-        <a href="#pendidikan">Pendidikan</a>
-        <a href="#keahlian">Keahlian</a>
-        <a href="#proyek">Proyek</a>
-        <a href="#kontak">Kontak</a>
-        <a class="nav-store" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php">Rumah Rajut ↗</a>
-      </nav>
+      <a class="btn btn-secondary" href="profil-lengkap.html">
+        Lihat Portofolio Lengkap
+      </a>
     </div>
-  </header>
+  </div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-decor decor-one"></div>
-      <div class="hero-decor decor-two"></div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow"><span></span> PROFIL & PORTOFOLIO SISWA RPL</div>
-          <h1>Halo, saya<br><em>Devin Al-Fakhry<br>Afrillano.</em></h1>
-          <p class="hero-subtitle">
-            Siswa <strong>Rekayasa Perangkat Lunak</strong> di SMK Negeri 1 Jenangan
-            yang tertarik pada pemrograman, pengembangan web, aplikasi, dan game development.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#proyek">Lihat Proyek Saya</a>
-            <a class="btn ghost" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php">Buka Rumah Rajut</a>
-          </div>
-          <div class="quick-facts">
-            <div><strong>RPL</strong><span>Jurusan</span></div>
-            <div><strong>Construct 3</strong><span>Game Development</span></div>
-            <div><strong>2024–Sekarang</strong><span>SMKN 1 Jenangan</span></div>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="profile-orbit">
-            <span class="orbit-dot dot-a"></span>
-            <span class="orbit-dot dot-b"></span>
-            <span class="orbit-dot dot-c"></span>
-
-            <div class="profile-circle">
-              <img src="assets/img/devin-profile-circle.jpg" alt="Foto Devin Al-Fakhry Afrillano dengan latar merah dan kemeja putih">
-            </div>
-
-            <div class="school-badge profile-school-badge">
-              <img src="assets/img/logo-smkn1jenangan.png" alt="Logo SMK Negeri 1 Jenangan">
-              <div><strong>SMKN 1 Jenangan</strong><small>Rekayasa Perangkat Lunak</small></div>
-            </div>
-
-            <div class="status-card profile-status-card">
-              <span class="status-dot"></span>
-              <div>
-                <strong>Calon Tenaga Profesional</strong>
-                <small>Belajar • Berkarya • Berkembang</small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about-section" id="tentang">
-      <div class="container">
-        <div class="section-kicker">01 / PROFIL DIRI</div>
-        <div class="about-grid">
-          <div>
-            <h2>Belajar teknologi untuk<br><span>menciptakan sesuatu yang berguna.</span></h2>
-          </div>
-          <div class="about-text">
-            <p>
-              Saya adalah siswa SMK Negeri 1 Jenangan jurusan Rekayasa Perangkat Lunak.
-              Saya memiliki ketertarikan dalam pengembangan perangkat lunak, pemrograman,
-              dan teknologi informasi.
-            </p>
-            <p>
-              Saya berkomitmen untuk terus belajar, meningkatkan keterampilan,
-              serta siap berkontribusi secara positif di lingkungan kerja profesional.
-            </p>
-          </div>
-        </div>
-
-        <div class="identity-grid">
-          <article class="identity-card">
-            <span class="id-icon">◉</span>
-            <small>Tempat, Tanggal Lahir</small>
-            <strong>Ponorogo, 8 April 2009</strong>
-          </article>
-          <article class="identity-card">
-            <span class="id-icon">⌖</span>
-            <small>Alamat</small>
-            <strong>RT 02 RW 01, Jl. Jepun, Gandu, Mlarak, Ponorogo, Jawa Timur</strong>
-          </article>
-          <article class="identity-card">
-            <span class="id-icon">☎</span>
-            <small>Telepon</small>
-            <strong>0895 7100 40022</strong>
-          </article>
-          <article class="identity-card">
-            <span class="id-icon">✉</span>
-            <small>Email</small>
-            <strong>devinq1s2@gmail.com</strong>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section education-section" id="pendidikan">
-      <div class="container split-heading">
-        <div>
-          <div class="section-kicker">02 / RIWAYAT PENDIDIKAN</div>
-          <h2>Perjalanan<br><span>pendidikan saya.</span></h2>
-        </div>
-        <div class="timeline">
-          <article>
-            <span class="time-dot"></span>
-            <div class="time-year">2024 — Sekarang</div>
-            <h3>SMK Negeri 1 Jenangan</h3>
-            <p>Jurusan Rekayasa Perangkat Lunak</p>
-          </article>
-          <article>
-            <span class="time-dot"></span>
-            <div class="time-year">2021 — 2024</div>
-            <h3>SMPN 1 Mlarak</h3>
-            <p>Ponorogo, Jawa Timur</p>
-          </article>
-          <article>
-            <span class="time-dot"></span>
-            <div class="time-year">2015 — 2021</div>
-            <h3>SDN 1 Gandu</h3>
-            <p>Ponorogo, Jawa Timur</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section skills-section" id="keahlian">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="section-kicker light">03 / KOMPETENSI</div>
-            <h2>Keahlian teknis &<br><span>kemampuan pendukung.</span></h2>
-          </div>
-          <p>Kompetensi yang sedang saya kembangkan melalui pembelajaran sekolah, proyek, dan praktik kerja lapangan.</p>
-        </div>
-
-        <div class="skills-layout">
-          <article class="skill-panel">
-            <span class="panel-no">01</span>
-            <h3>Pemrograman & Web</h3>
-            <div class="chips">
-              <span>C++</span><span>Java</span><span>Python</span><span>JavaScript</span>
-              <span>HTML</span><span>CSS</span><span>MySQL</span>
-            </div>
-          </article>
-          <article class="skill-panel">
-            <span class="panel-no">02</span>
-            <h3>Aplikasi & Tools</h3>
-            <div class="chips">
-              <span>Desktop & Mobile</span><span>Construct 3</span><span>Microsoft Office</span>
-              <span>Canva</span><span>Editing Video Dasar</span>
-            </div>
-          </article>
-          <article class="skill-panel">
-            <span class="panel-no">03</span>
-            <h3>Analisis & Soft Skills</h3>
-            <div class="chips">
-              <span>Analisis Kebutuhan Sistem</span><span>Komunikasi</span><span>Kerja Sama Tim</span>
-              <span>Disiplin</span><span>Tanggung Jawab</span><span>Kreatif</span><span>Problem Solving</span>
-            </div>
-          </article>
-          <article class="skill-panel">
-            <span class="panel-no">04</span>
-            <h3>Bahasa</h3>
-            <ul class="language-list">
-              <li><span>Bahasa Indonesia</span><b>Aktif</b></li>
-              <li><span>Bahasa Jawa</span><b>Aktif</b></li>
-              <li><span>Bahasa Inggris</span><b>Dasar</b></li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section project-section" id="proyek">
-      <div class="container">
-        <div class="section-kicker">04 / PENGALAMAN & PROYEK</div>
-        <div class="project-intro">
-          <h2>Pengalaman belajar,<br><span>PKL, dan proyek yang saya kerjakan.</span></h2>
-          <p>
-            Bagian ini merangkum pengalaman dan proyek utama yang saya kerjakan selama belajar
-            Rekayasa Perangkat Lunak, praktik kerja lapangan, serta latihan pengembangan sistem.
-          </p>
-        </div>
-
-        <div class="experience-timeline">
-          <article class="experience-card featured-exp">
-            <div class="exp-number">01</div>
-            <div class="exp-content">
-              <div class="exp-meta">
-                <span class="date">2025 — Sekarang</span>
-                <span>PKL • CV Blitaris Tekno</span>
-              </div>
-              <h3>Pembuatan Game Block Blast menggunakan Construct 3</h3>
-              <p class="exp-summary">
-                Proyek utama selama PKL berupa game puzzle berbasis grid. Saya mengerjakan
-                tampilan game, mekanisme penempatan block, sistem skor, serta beberapa fitur pendukung.
-              </p>
-              <ul class="exp-points">
-                <li>Membuat game puzzle berbasis grid menggunakan Construct 3.</li>
-                <li>Menerapkan sistem grid, drag and drop, deteksi baris/kolom penuh, skor, best score, dan game over.</li>
-                <li>Mendesain tampilan game, objek, menu utama, serta logika pada event sheet.</li>
-                <li>Membuat sistem placement block, spawner, item bom, pengaturan suara, dan menu bantuan.</li>
-              </ul>
-
-              <div class="project-gallery project-gallery-hd">
-                <figure class="gallery-main-menu">
-                  <img src="assets/img/blockblast-menu-hd.jpg" alt="Menu utama Block Blast">
-                  <figcaption><b>Menu Utama</b><span>Play, best score, ranking, help, dan pengaturan</span></figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/img/blockblast-gameplay-awal-hd.jpg" alt="Gameplay awal Block Blast">
-                  <figcaption><b>Gameplay Awal</b><span>Grid dan pilihan block</span></figcaption>
-                </figure>
-                <figure>
-                  <img src="assets/img/blockblast-gameplay-bom-hd.jpg" alt="Gameplay efek bom Block Blast">
-                  <figcaption><b>Efek Bom & Skor</b><span>Special item dan blast effect</span></figcaption>
-                </figure>
-                <figure class="gallery-ranking">
-                  <img src="assets/img/blockblast-ranking-hd.jpg" alt="Ranking online Block Blast">
-                  <figcaption><b>Ranking Online</b><span>Nama pemain dan best score</span></figcaption>
-                </figure>
-              </div>
-
-              <div class="construct-features">
-                <span>Construct 3</span>
-                <span>Grid System</span>
-                <span>Drag & Drop</span>
-                <span>Score</span>
-                <span>Best Score</span>
-                <span>Bomb Item</span>
-                <span>Sound</span>
-                <span>Help Menu</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <div class="exp-number">02</div>
-            <div class="exp-content">
-              <div class="exp-meta">
-                <span class="date">2025 — Sekarang</span>
-                <span>Proyek Sekolah • SMK Negeri 1 Jenangan</span>
-              </div>
-              <h3>Proyek Aplikasi Digital & Website Produk</h3>
-              <p class="exp-summary">
-                Latihan pengembangan aplikasi dan website produk sebagai bagian dari pembelajaran
-                Rekayasa Perangkat Lunak.
-              </p>
-              <ul class="exp-points">
-                <li>Berlatih membuat aplikasi dan website produk sederhana.</li>
-                <li>Mengenal proses pembuatan antarmuka pengguna yang rapi dan mudah digunakan.</li>
-                <li>Mempelajari dasar pengembangan sistem dan pengelolaan struktur project.</li>
-              </ul>
-              <div class="mini-tags">
-                <span>HTML</span><span>CSS</span><span>UI</span><span>Website</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="experience-card">
-            <div class="exp-number">03</div>
-            <div class="exp-content">
-              <div class="exp-meta">
-                <span class="date">2024</span>
-                <span>Projek Sekolah</span>
-              </div>
-              <h3>Sistem Informasi Presensi Siswa</h3>
-              <p class="exp-summary">
-                Proyek pembelajaran untuk memahami bagaimana sebuah sistem presensi dirancang
-                dari kebutuhan pengguna hingga penyimpanan data.
-              </p>
-              <ul class="exp-points">
-                <li>Mempelajari perancangan sistem presensi siswa.</li>
-                <li>Mengenal dasar basis data dan pengolahan informasi.</li>
-                <li>Mempelajari analisis kebutuhan sistem sebelum proses pengembangan.</li>
-              </ul>
-              <div class="mini-tags">
-                <span>MySQL</span><span>Basis Data</span><span>Analisis Sistem</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="experience-card serkom-card">
-            <div class="exp-number">04</div>
-            <div class="exp-content">
-              <div class="exp-meta">
-                <span class="date">2026</span>
-                <span>Mini Project Uji Serkom</span>
-              </div>
-              <h3>Rumah Rajut — Website Usaha Dinamis</h3>
-              <p class="exp-summary">
-                Website usaha produk kerajinan rajut yang dibuat sebagai mini project Junior Web Developer.
-                Website terhubung langsung dari portofolio ini.
-              </p>
-              <ul class="exp-points">
-                <li>Menampilkan katalog produk dari database MySQL.</li>
-                <li>Menyediakan pencarian, filter kategori, detail produk, dan pemesanan melalui WhatsApp.</li>
-                <li>Membuat halaman admin CRUD untuk tambah, edit, dan hapus data produk.</li>
-              </ul>
-              <div class="mini-tags">
-                <span>PHP</span><span>MySQL</span><span>CRUD</span><span>Responsive Web</span>
-              </div>
-              <a class="project-cta" href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php">Buka Website Rumah Rajut <span>↗</span></a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section interests-section">
-      <div class="container">
-        <div class="section-kicker">05 / HOBI & MINAT</div>
-        <div class="interest-row">
-          <div><span>⌨</span><b>Teknologi</b></div>
-          <div><span>&lt;/&gt;</span><b>Pemrograman</b></div>
-          <div><span>◈</span><b>Game Development</b></div>
-          <div><span>⚡</span><b>Olahraga</b></div>
-          <div><span>▶</span><b>Konten Kreatif</b></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section contact-section" id="kontak">
-      <div class="container contact-grid">
-        <div>
-          <div class="section-kicker light">06 / KONTAK</div>
-          <h2>Terus belajar,<br><span>berinovasi, dan berkontribusi.</span></h2>
-        </div>
-        <div class="contact-box">
-          <a href="mailto:devinq1s2@gmail.com"><small>Email</small><strong>devinq1s2@gmail.com</strong><span>↗</span></a>
-          <a href="tel:0895710040022"><small>Telepon</small><strong>0895 7100 40022</strong><span>↗</span></a>
-          <a href="http://rumahrajut.infinityfreeapp.com/SERKOM_DEVIN_FINAL/toko_rajut/index.php"><small>Mini Project Serkom</small><strong>Rumah Rajut</strong><span>↗</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-row">
-      <div class="footer-school">
-        <img src="assets/img/logo-smkn1jenangan.png" alt="Logo sekolah">
-        <div><strong>SMK Negeri 1 Jenangan</strong><span>Rekayasa Perangkat Lunak</span></div>
-      </div>
-      <p>© <span id="year"></span> Devin Al-Fakhry Afrillano</p>
-    </div>
-  </footer>
-
-  <script src="assets/js/script.js"></script>
 </body>
 </html>
